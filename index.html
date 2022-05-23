@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    
+    <head>
+
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width-device-width">
+        <title>Juego del Ahorcado</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=
+        Josefin+Sans:wght@300&family=Montserrat:wght@300&display=swap"
+        rel="stylesheet">
+        
+    </head>
+
+    <body class="light">
+           <header>
+                <div class="caja">
+                    <h1><img class="icon" src="img/icono.png"> </h1>
+                    <h2>Juego del Ahorcado</h2>
+                </div>
+            </header>
+            <main class="fondo">
+                <div class="contenedorAhorcado alinearAhorcado" id="ahorcado">
+                    <img src="img/ahorcado.jpg" class='ahorcado'> 
+                </div>
+                  
+            <div class="content2 block" id="inicio">
+                
+                <button id="home" class="btnInicio " onclick="jugar()">Iniciar Juego</button><br>
+                <button id="home" class="btnInicio" onclick="addWord()">Agregar Nueva Palabra</button>
+            </div>
+
+            <canvas id="cvDraw" width="200" height="200" style="border: none;">Canvas is not supported</canvas>
+            <div class="content" id="juego" style="display: none;">
+                <div class="flex">
+                    <div class="boxWords" id="words">
+                    </div>
+                </div>
+               <div class="contenedorImagen alinearHorizontal">
+                    <img src="img/a1.jpg" id='imagen'>
+                </div>
+                <div class="contenedorPalabra alinearHorizontal" id="contenedorPalabra">
+                    
+                    <div id="palabraSecreta" class="palabraSecreta centrarDiv">
+                        <div class="letra alinearHorizontal centrarDiv">_</div>
+                        <div class="letra alinearHorizontal centrarDiv">_</div> 
+                        <div class="letra alinearHorizontal centrarDiv">_</div> 
+                        <div class="letra alinearHorizontal centrarDiv">_</div> 
+                        <div class="letra alinearHorizontal centrarDiv">_</div> 
+                    </div>
+                    <div id="botonJugar" class="botonJugar centrarDiv centrarTexto  
+                        cursorPointer">Finalizar juego</div>
+                    <div class="contenedorNoIntentos centrarTexto" id="intentos">
+                        <div class="tituloNoIntentos">
+                            Numero de Intentos
+                        </div>
+                        <div class="noIntentos centrarDiv" id="noIntentos">
+                            6
+                           
+                        </div>	
+                    </div>
+                </div>
+                    <div class="contenedorLetras centrarDiv" id="contenedorLetras">
+                    <div class="botonLetra " id="letraA">A</div>
+                    <div class="botonLetra " id="letraB">B</div>
+                    <div class="botonLetra " id="letraC">C</div>
+                    <div class="botonLetra " id="letraD">D</div>
+                    <div class="botonLetra " id="letraE">E</div>
+                    <div class="botonLetra " id="letraF">F</div>
+                    <div class="botonLetra " id="letraG">G</div>
+                    <div class="botonLetra " id="letraH">H</div>
+                    <div class="botonLetra " id="letraI">I</div>
+                    <div class="botonLetra " id="letraJ">J</div>
+                    <div class="botonLetra " id="letraK">K</div>
+                    <div class="botonLetra " id="letraL">L</div>
+                    <div class="botonLetra " id="letraM">M</div>
+                    <div class="botonLetra " id="letraN">N</div>
+                    <div class="botonLetra " id="letraO">O</div>
+                    <div class="botonLetra " id="letraP">P</div>
+                    <div class="botonLetra " id="letraQ">Q</div>
+                    <div class="botonLetra " id="letraR">R</div>
+                    <div class="botonLetra " id="letraS">S</div>
+                    <div class="botonLetra " id="letraT">T</div>
+                    <div class="botonLetra " id="letraU">U</div>
+                    <div class="botonLetra " id="letraV">V</div>
+                    <div class="botonLetra " id="letraW">W</div>
+                    <div class="botonLetra " id="letraX">X</div>
+                    <div class="botonLetra " id="letraY">Y</div>
+                    <div class="botonLetra " id="letraZ">Z</div>
+            </div>
+            
+        </div>
+        <div id="toast-qr" class="toast" style="display: none;">
+            <h3>Escribe la palabra que quieres agregar</h3>
+            <h6>Máximo 8 letras</h6>
+            <input type="text" id="palabra" name="palabra" onkeyup="upper()" 
+            maxlength="8" autocomplete="off" required="">
+            <br>
+            <button class="toastbtn" onclick="valida()">Guardar y Empezar</button>
+            <button  class="toastbtn" onclick="cancelAdd()">Cancelar</button>   
+        
+        </div>
+    </main>
+    <footer>
+        <img class="imagen-footer" src="img/alura-imagen.png">
+        <p class="copyright">&copy Copyright Juego Ahorcado Alura - 2022</p>
+        <p>Diseñado por Andrea Hernández</p>
+
+    </footer>
+    </body>
+
+</html>
+
+<script src="js/principal.js"></script>
